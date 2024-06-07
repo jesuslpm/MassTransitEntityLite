@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>annotations</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.Extensions.Hosting" />
+    <PackageReference Include="Serilog.Sinks.Console" />
+    <PackageReference Include="OpenTelemetry.Exporter.Jaeger" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" />
+	  <PackageReference Include="EntityLite" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\src\MassTransit.EntityLite\MassTransit.EntityLite.csproj" />
+    <ProjectReference Include="..\..\..\..\src\Transports\MassTransit.RabbitMqTransport\MassTransit.RabbitMqTransport.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataLayer.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DataLayer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DataLayer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataLayer.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

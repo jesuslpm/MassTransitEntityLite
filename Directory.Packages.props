@@ -101,8 +101,16 @@
     <PackageVersion Include="System.Threading.Channels" Version="6.0.0" />
     <PackageVersion Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
     <PackageVersion Include="System.ValueTuple" Version="4.5.0" />
-  </ItemGroup>
-  <ItemGroup>
+	<PackageVersion Include="EntityLite.Core" Version="2.16.1" />
+	<PackageVersion Include="EntityLite" Version="2.16.1" />
+	<PackageVersion Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+	<PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.8.1" />
+	<PackageVersion Include="Serilog.Extensions.Hosting" Version="8.0.0" />
+    <PackageVersion Include="Serilog.Sinks.Console" Version="5.0.1" />
+    <PackageVersion Include="OpenTelemetry.Exporter.Jaeger" Version="1.5.1" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.7.0" />
+	<PackageVersion Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+  </ItemGroup>  <ItemGroup>
     <GlobalPackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
   </ItemGroup>
 </Project>
