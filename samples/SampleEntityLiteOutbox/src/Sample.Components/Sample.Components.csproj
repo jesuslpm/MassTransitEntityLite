@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\src\MassTransit.EntityLite\MassTransit.EntityLite.csproj" />
+    <ProjectReference Include="..\..\..\..\src\Persistence\MassTransit.EntityLite\MassTransit.EntityLite.csproj" />
     <ProjectReference Include="..\..\..\..\src\Transports\MassTransit.RabbitMqTransport\MassTransit.RabbitMqTransport.csproj" />
   </ItemGroup>
 
