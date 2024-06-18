@@ -12,7 +12,7 @@ namespace MassTransit.EntityLiteIntegration
         /// <summary>
         /// Returns the lock statement for the specified property (usable for any entity)
         /// </summary>
-        /// <param name="context"></param>
+        /// <param name="dataService"></param>
         /// <param name="propertyNames">One or more property names</param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
@@ -24,5 +24,7 @@ namespace MassTransit.EntityLiteIntegration
         IQueryLite<OutboxState> GetOutboxQuery(DataService ds);
 
         IQueryLite<InboxState> GetInboxQuery(DataService ds);
+
+        IQueryLite<T> GetLockQuery<T>(DataService ds) where T : class;
     }
 }

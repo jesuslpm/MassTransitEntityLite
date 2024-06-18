@@ -46,8 +46,7 @@ namespace MassTransit
             configure?.Invoke(observer);
 
             configurator.ConnectConsumerConfigurationObserver(observer);
-            // TODO: Uncomment when MassTransit.EntityLite implements saga
-            // configurator.ConnectSagaConfigurationObserver(observer);
+            configurator.ConnectSagaConfigurationObserver(observer);
         }
 
 

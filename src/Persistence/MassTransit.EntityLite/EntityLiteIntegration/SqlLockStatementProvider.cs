@@ -53,6 +53,11 @@
             return new TemplatedQueryLite<InboxState>(ds, new InboxLockQuery());
         }
 
+        public IQueryLite<T> GetLockQuery<T>(DataService ds) where T : class
+        {
+            return new TemplatedQueryLite<T>(ds, new LockQuery<T>(ds));
+        }
+
         string FormatLockStatement<T>(DataService ds, params string[] propertyNames)
             where T : class
         {

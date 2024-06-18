@@ -1,12 +1,16 @@
 using System.Diagnostics;
+using System.Reflection;
 using MassTransit;
 using MassTransit.Metadata;
 using OpenTelemetry;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
+using Sample.Api;
 using Sample.Components;
 using Serilog;
 using Serilog.Events;
+
+const string Prefix = "SampleEntityLiteOutboxSaga";
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
@@ -70,8 +74,11 @@ builder.Services.AddMassTransit(x =>
         o.DisableInboxCleanupService();
     });
 
+    x.SetEndpointNameFormatter(new KebabCaseEndpointNameFormatter(Prefix, true));
+
     x.UsingRabbitMq((context, cfg) =>
     {
+        cfg.MessageTopology.SetEntityNameFormatter(new PrefixEntityNameFormatter(cfg.MessageTopology.EntityNameFormatter, Prefix + ":"));
         cfg.ConfigureEndpoints(context);
         cfg.AutoStart = true;
     });

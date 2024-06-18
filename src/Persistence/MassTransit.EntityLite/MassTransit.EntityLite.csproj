@@ -5,6 +5,19 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<RootNamespace>MassTransit</RootNamespace>
+		<PackageId>EntityLite.MassTransit</PackageId>
+		<Title>EntityLite.MassTransit</Title>
+		<Version>1.0.0-beta1</Version>
+		<Authors>Jesús López</Authors>
+		<Company>inercya</Company>
+		<Product>EntityLite</Product>
+		<Description>EntityLite integration with MassTransit</Description>
+		<Copyright>Copyright 2007-2024  i-necya intelligent software</Copyright>
+		<PackageProjectUrl>https://github.com/jesuslpm/MassTransitEntityLite</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/jesuslpm/MassTransitEntityLite</RepositoryUrl>
+		<PackageIcon>EntityLite.png</PackageIcon>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -13,6 +26,15 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\MassTransit\MassTransit.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="EntityLite.png" PackagePath="">
+	    <Pack>True</Pack>
+	  </None>
+	  <None Include="README.md" PackagePath="">
+	    <Pack>True</Pack>
+	  </None>
 	</ItemGroup>
 
 </Project>
